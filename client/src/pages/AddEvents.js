@@ -7,7 +7,8 @@ class AddEvents extends Component {
             eventname: "",
             eventdate: "",
             eventmonth: "",
-            eventyear: ""
+            eventyear: "",
+            eventimage:""
         }
         this.submitTarget = this.submitTarget.bind(this);
     }
@@ -24,6 +25,7 @@ class AddEvents extends Component {
         data.eventname = this.state.eventname;
         let eventdate = new Date(this.state.eventdate + "-" + this.state.eventmonth + "-" + this.state.eventyear);
         data.eventdate = eventdate;
+        data.eventimage= this.state.eventimage;
         getApidata("POST",data)
             .then(response => {
                 alert("data added successfully");
@@ -47,6 +49,9 @@ class AddEvents extends Component {
                         </div>
                         <div>
                             year: <input name="eventyear" onChange={this.onChange.bind(this)} />
+                        </div>
+                        <div>
+                            Event Poster link: <input name="eventimage" onChange={this.onChange.bind(this)} />
                         </div>
                     </div>
                     <button>Save</button>

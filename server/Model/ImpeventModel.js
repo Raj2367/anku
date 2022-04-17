@@ -1,4 +1,4 @@
-const mongoose= require("mongoose");
+const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const impEventSchema = new Schema({
@@ -8,6 +8,10 @@ const impEventSchema = new Schema({
   },
   eventdate: {
     type: Date,
+    required: true
+  },
+  eventimage: {
+    type: String,
     required: true
   }
 });

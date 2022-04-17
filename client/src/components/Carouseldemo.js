@@ -39,11 +39,14 @@ class Carouseldemo extends Component {
       events.push(
         <div>
           <div>
-            {new Date(this.state.events[i].eventdate).getDate()}-{new Date(this.state.events[i].eventdate).getMonth()}
+            Event name: {this.state.events[i].eventname}
           </div>
-          <Item>
-            {this.state.events[i].eventname}
-          </Item>
+          <div>
+            Event Date: {new Date(this.state.events[i].eventdate).getDate()}/{new Date(this.state.events[i].eventdate).getMonth()}/{new Date(this.state.events[i].eventdate).getFullYear()}
+          </div>
+          <div>
+            <img src={this.state.events[i].eventimage} style={{ height: "200px", width: "200px" }} />
+          </div>
         </div>
       )
     }
